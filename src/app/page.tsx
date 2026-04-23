@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Link from "next/link";
 
 export default function Home() {
@@ -9,12 +9,12 @@ export default function Home() {
         <p className="text-lg mb-6">
           Educação financeira prática para sala de aula brasileira
         </p>
-        <button
-          type="button"
-          className="bg-green-500 px-6 py-3 rounded-lg font-semibold"
+        <Link
+          href="/blog"
+          className="bg-green-500 px-6 py-3 rounded-lg font-semibold inline-block"
         >
           Ver conteúdos
-        </button>
+        </Link>
       </section>
 
       <section className="py-16 px-6 max-w-4xl mx-auto text-center">
@@ -61,11 +61,14 @@ export default function Home() {
             </h3>
           </Link>
 
-          <div className="p-6 border rounded-lg">
+          <Link
+            href="/blog/como-ensinar-orcamento-pessoal-para-alunos"
+            className="block p-6 border rounded-lg hover:bg-gray-50"
+          >
             <h3 className="font-semibold">
               Como ensinar orçamento pessoal para alunos
             </h3>
-          </div>
+          </Link>
         </div>
       </section>
 

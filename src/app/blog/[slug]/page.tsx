@@ -1,26 +1,35 @@
-"use client";
-import Post from "@/content/blog/educacao-financeira-nas-escolas.mdx";
+'use client';
 
-export default function Page() {
+import { use } from "react";
+
+import Post1 from "@/content/blog/educacao-financeira-nas-escolas.mdx";
+import Post2 from "@/content/blog/como-ensinar-orcamento-pessoal-para-alunos.mdx";
+
+const posts = {
+  "educacao-financeira-nas-escolas": Post1,
+  "como-ensinar-orcamento-pessoal-para-alunos": Post2,
+};
+
+export default function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = use(params);
+
+  const Post = posts[slug as keyof typeof posts];
+
+  if (!Post) {
+    return <div className="p-10">Post não encontrado</div>;
+  }
+
   return (
     <main className="bg-white text-gray-900 min-h-screen">
-      <section className="bg-blue-900 text-white py-16 px-6 text-center">
-        <h1 className="text-3xl font-bold">
-          Educação financeira nas escolas: por onde começar?
-        </h1>
-      </section>
-
       <section className="max-w-3xl mx-auto px-6 py-16 bg-white">
-        <article
-          className="prose prose-lg max-w-none
-          prose-headings:text-blue-900
-          prose-h2:text-blue-800
-          prose-p:text-gray-700
-          prose-li:marker:text-green-600
-          prose-strong:text-gray-900
-        "
-        >
-          <Post />
+        <article className="max-w-none mx-auto text-gray-800 leading-relaxed text-lg">
+          <div className="space-y-6">
+            <Post />
+          </div>
         </article>
       </section>
     </main>
