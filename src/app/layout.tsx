@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Finanças na Escola",
-  description: "Finanças na Escola",
+  description: "Educação financeira prática para professores e alunos no Brasil",
 };
 
 export default function RootLayout({
