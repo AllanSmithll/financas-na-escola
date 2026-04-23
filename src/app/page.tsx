@@ -1,23 +1,24 @@
+'use client';
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
-
       <section className="text-center py-20 px-6 bg-blue-900 text-white">
-        <h1 className="text-4xl font-bold mb-4">
-          Finanças na Escola
-        </h1>
+        <h1 className="text-4xl font-bold mb-4">Finanças na Escola</h1>
         <p className="text-lg mb-6">
           Educação financeira prática para sala de aula brasileira
         </p>
-        <button className="bg-green-500 px-6 py-3 rounded-lg font-semibold">
+        <button
+          type="button"
+          className="bg-green-500 px-6 py-3 rounded-lg font-semibold"
+        >
           Ver conteúdos
         </button>
       </section>
 
       <section className="py-16 px-6 max-w-4xl mx-auto text-center">
-        <h2 className="text-2xl font-bold mb-6">
-          O problema é real
-        </h2>
+        <h2 className="text-2xl font-bold mb-6">O problema é real</h2>
         <p className="text-lg">
           A maioria dos jovens sai da escola sem saber controlar dinheiro,
           evitar dívidas ou planejar o próprio futuro.
@@ -48,16 +49,17 @@ export default function Home() {
       </section>
 
       <section className="py-16 px-6 max-w-5xl mx-auto">
-        <h2 className="text-2xl font-bold mb-6">
-          Conteúdos recentes
-        </h2>
+        <h2 className="text-2xl font-bold mb-6">Conteúdos recentes</h2>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 border rounded-lg">
+          <Link
+            href="/blog/educacao-financeira-nas-escolas"
+            className="block p-6 border rounded-lg hover:bg-gray-50"
+          >
             <h3 className="font-semibold">
               Educação financeira nas escolas: por onde começar?
             </h3>
-          </div>
+          </Link>
 
           <div className="p-6 border rounded-lg">
             <h3 className="font-semibold">
@@ -71,11 +73,8 @@ export default function Home() {
         <h2 className="text-2xl font-bold mb-4">
           Educação financeira é essencial
         </h2>
-        <p className="mb-6">
-          Comece a aplicar isso na sua sala de aula hoje
-        </p>
+        <p className="mb-6">Comece a aplicar isso na sua sala de aula hoje</p>
       </section>
-
     </main>
   );
 }

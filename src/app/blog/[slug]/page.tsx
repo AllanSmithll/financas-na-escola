@@ -1,77 +1,28 @@
-type Post = {
-  title: string;
-  description: string;
-  content: string;
-};
+"use client";
+import Post from "@/content/blog/educacao-financeira-nas-escolas.mdx";
 
-const posts: Record<string, Post> = {
-  "educacao-financeira-nas-escolas": {
-    title: "Educação financeira nas escolas: por onde começar?",
-    description: "Um guia prático para professores iniciarem educação financeira em sala.",
-    content: `
-A educação financeira é uma habilidade essencial para a vida adulta.
-
-No entanto, a maioria dos jovens sai da escola sem esse conhecimento...
-
-## Por onde começar?
-
-Comece com conceitos simples como:
-- orçamento
-- consumo consciente
-- planejamento
-
-## Aplicação prática
-
-Traga exemplos da realidade dos alunos...
-`,
-  },
-};
-
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const post = posts[params.slug];
-
-  if (!post) {
-    return <div className="p-10">Post não encontrado</div>;
-  }
-
+export default function Page() {
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
+    <main className="bg-white text-gray-900 min-h-screen">
+      <section className="bg-blue-900 text-white py-16 px-6 text-center">
+        <h1 className="text-3xl font-bold">
+          Educação financeira nas escolas: por onde começar?
+        </h1>
+      </section>
 
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-
-      <p className="text-gray-600 mb-6">{post.description}</p>
-
-      <div className="text-sm text-gray-500 mb-10">
-        Por Finanças na Escola • 2026
-      </div>
-
-      <article className="prose prose-lg">
-        {post.content.split("\n").map((line, index) => {
-          if (line.startsWith("## ")) {
-            return (
-              <h2 key={index}>
-                {line.replace("## ", "")}
-              </h2>
-            );
-          }
-
-          if (line.startsWith("- ")) {
-            return <li key={index}>{line.replace("- ", "")}</li>;
-          }
-
-          return <p key={index}>{line}</p>;
-        })}
-      </article>
-
-      <div className="mt-16 p-6 bg-green-100 rounded-xl text-center">
-        <p className="font-semibold mb-2">
-          Gostou do conteúdo?
-        </p>
-        <p>
-          Siga @financas.naescola para mais conteúdos práticos
-        </p>
-      </div>
-
+      <section className="max-w-3xl mx-auto px-6 py-16 bg-white">
+        <article
+          className="prose prose-lg max-w-none
+          prose-headings:text-blue-900
+          prose-h2:text-blue-800
+          prose-p:text-gray-700
+          prose-li:marker:text-green-600
+          prose-strong:text-gray-900
+        "
+        >
+          <Post />
+        </article>
+      </section>
     </main>
   );
 }
