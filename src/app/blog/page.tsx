@@ -5,6 +5,10 @@ const posts = [
     slug: "educacao-financeira-nas-escolas",
     title: "Educação financeira nas escolas: por onde começar?",
   },
+  {
+    slug: 'como-ensinar-orcamento-pessoal-para-alunos',
+    title: 'Como ensinar orçamento pessoal para alunos'
+  }
 ];
 
 export default function BlogPage() {
